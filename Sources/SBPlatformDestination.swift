@@ -120,8 +120,8 @@ public class SBPlatformDestination: BaseDestination {
                 sendingFileURL = URL(fileURLWithPath: baseDir + sendingfileName)
                 analyticsFileURL = URL(fileURLWithPath: baseDir + analyticsFileName)
             #else
-                // iOS and watchOS are using the app’s document directory
-                if let url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+                // iOS and watchOS are using the app’s application support directory
+                if let url = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
                     baseURL = url
                 }
             #endif
